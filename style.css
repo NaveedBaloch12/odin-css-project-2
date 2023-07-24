@@ -497,7 +497,7 @@ hr {
     }
 
     .line {
-        width: 30%;
+        display: none;
     }
 
     .deal {
