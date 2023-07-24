@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg_nav_foot_color: black;
+    --bg_box_color: rgb(91, 48, 48);
+    --heading_color: rgb(255, 255, 255);
+    --a_hover_color: rgb(255, 255, 255);
+    --text_color: rgb(215, 201, 191);
+
+    --box_inline_padding: 3.5rem;
+    --box_margin: 3.5rem;
+}
+
+/* ------------------------------------------- Button Styling ------------------------- */
+
+.btn {
+    position: relative;
+    margin-block: 1rem;
+    padding: .7rem;
+    font-size: clamp(1rem, 2vw - 12px, 3rem);
+    font-weight: bold;
+    width: 99%;
+    background-color: white;
+    color: var(--bg_box_color);
+    border: 2px solid var(--bg_box_color);
+    z-index: 10;
+    box-shadow:
+        0.9px 1.3px 2.4px rgba(0, 0, 0, 0.044),
+        2.5px 3.5px 6.6px rgba(0, 0, 0, 0.055),
+        6px 8.4px 16px rgba(0, 0, 0, 0.066),
+        20px 28px 53px rgba(0, 0, 0, 0.11);
+    transition: .2s;
+
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg_box_color);
+    bottom: 0;
+    left: 0;
+
+}
+
+/* Button Center */
+.btn::after {
+    content: "";
+    transform: scale(0, 1);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    transform: scale(1, 1);
+}
+
+
+
+/* ==================================================================================== */
+/* --------------------------------- Navbar CSS---------------------------------------- */
+/* ==================================================================================== */
+
+nav {
+    background-color: var(--bg_nav_foot_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--box_inline_padding);
+}
+
+
+.left__nav--img {
+    max-height: 100px;
+    margin-inline: 1rem;
+}
+
+.right__nav--link {
+    position: relative;
+    margin: 1.5rem;
+    text-transform: uppercase;
+    padding: .3rem;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw - 10px, 2rem);
+    color: var(--heading_color);
+    transition: .2s;
+    font-weight: bold;
+}
+
+.right__nav--link:hover {
+    text-shadow: 1px 1px 5px rgba(128, 0, 128, 0.314);
+    color: var(--a_hover_color);
+}
+
+.right__nav--link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--a_hover_color);
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.right__nav--link::before {
+    transform: scale(0, 1);
+    transition: transform 0.2s ease;
+
+}
+
+.right__nav--link:hover::before {
+    transform: scale(1, 1);
+}
+
+
+.nav__menu--button {
+    display: none;
+
+}
+
+.nav__menu--button svg {
+    filter: invert(1);
+}
+
+
+
+/* ==================================================================================== */
+/* ------------------------- OFF Deal Section CSS ------------------------------------- */
+/* ==================================================================================== */
+
+.off__deal {
+    background-image: url(bg_1.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
+    padding: var(--box_inline_padding);
+}
+
+.off__deal--text {
+    text-transform: uppercase;
+}
+
+.text--div_1 {
+    font-size: clamp(3rem, 5vw, 7rem);
+    letter-spacing: .3rem;
+    font-weight: 700;
+}
+
+.text--div_2 {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-weight: 500;
+}
+
+.text--div_3 {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-weight: 500;
+}
+
+.off__deal--limit {
+    font-size: clamp(.7rem, 2vw - 12px, 2rem);
+}
+
+.off__deal--limit span {
+    font-weight: 700;
+}
+
+
+/* ==================================================================================== */
+/* ------------------------- Services Section CSS ------------------------------------- */
+/* ==================================================================================== */
+
+.services__section {
+    padding: var(--box_inline_padding);
+    background-color: var(--bg_box_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services {
+    display: flex;
+    align-items: center;
+}
+
+.services p {
+    margin: 4px 0px;
+}
+
+.services--img {
+    background-color: white;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    height: 70px;
+}
+
+.services--text__info {
+    max-width: 70%;
+    margin-inline: 12px;
+    color: white;
+}
+
+.info__heading {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.info--details {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.info--details:hover {
+    text-shadow: 1px 1px 5px rgba(128, 0, 128, 0.314);
+    color: white;
+}
+
+.info--details::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.info--details::before {
+    transform: translateY(4px);
+    transition: transform 0.2s ease;
+
+}
+
+.info--details:hover::before {
+    transform: translateY(1px);
+}
+
+
+/* ==================================================================================== */
+/* ------------------------- Featured on Section CSS ---------------------------------- */
+/* ==================================================================================== */
+
+.__line_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: var(--box_margin);
+}
+
+.line {
+    width: 40%;
+    height: 2px;
+    background-color: black;
+}
+
+.featurered--heading h2 {
+    text-transform: uppercase;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.featured__on--logos {
+    display: flex;
+    justify-content: space-around;
+    margin: var(--box_margin);
+}
+
+
+/* ==================================================================================== */
+/* ----------------------------- Top Deals Section CSS ------------------------------------ */
+/* ==================================================================================== */
+
+.top__deals {
+    padding: var(--box_inline_padding);
+    background-color: var(--bg_box_color);
+}
+
+.top__deals--heading h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.top__deals--heading .line {
+    background-color: white;
+}
+
+
+.deals__slider {
+    max-width: 60rem;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    margin: auto;
+    background-color: white;
+    padding: 12px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.deals__slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.deals__slider {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.deal {
+    position: relative;
+    min-width: 40rem;
+    height: 30rem;
+    margin-inline: 1rem;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:
+        0px 0px 2.9px rgba(0, 0, 0, 0.056),
+        0px 0px 7px rgba(0, 0, 0, 0.081),
+        0px 0px 13.1px rgba(0, 0, 0, 0.1),
+        0px 0px 23.5px rgba(0, 0, 0, 0.119),
+        0px 0px 43.9px rgba(0, 0, 0, 0.144),
+        0px 0px 105px rgba(0, 0, 0, 0.2);
+}
+
+
+.deal img {
+    height: 30rem;
+}
+
+.deal--info {
+    padding: var(--box_inline_padding);
+}
+
+.deal--info>h1 {
+    margin-block: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.dealis__location--a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.a__div {
+    height: 10px;
+    margin: 4px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: block;
+    background-color: rgba(190, 190, 190, 0.586);
+    transition: .2s;
+}
+
+.a__div:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+
+
+/* ==================================================================================== */
+/* ------------------------------- footer Section CSS --------------------------------- */
+/* ==================================================================================== */
+
+footer {
+    background-color: var(--bg_nav_foot_color);
+    color: white;
+    padding: var(--box_inline_padding);
+}
+
+footer a {
+    color: var(--text_color);
+    margin-inline: 4px;
+}
+
+footer a:hover {
+    color: var(--heading_color);
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading--name,
+.location--heading {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-inline: 1rem;
+}
+
+
+.wed__links,
+.location {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1rem;
+    flex-wrap: wrap;
+}
+
+.location ul {
+    margin-inline: 12px;
+}
+
+.wed__links a,
+.body__li {
+    display: block;
+    margin-block: 12px;
+    color: var(--text_color);
+}
+
+
+
+.headiing__li {
+    text-transform: uppercase;
+    color: var(--heading_color);
+    margin-bottom: 8px;
+}
+
+hr {
+    margin-block: 1rem;
+}
+
+
+.footer__copyright {
+    font-size: 20px;
+    margin-block: var(--box_margin) 0px;
+    text-align: center;
+}
+
+
+
+
+@media (max-width : 720px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .left__nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav__menu--button {
+        display: block;
+    }
+
+    .right__nav--link {
+        display: block;
+    }
+
+
+    .services__section {
+        flex-direction: column;
+    }
+
+    .services--text__info {
+        max-width: 100%;
+    }
+
+    .services {
+        margin-block: 12px;
+    }
+
+    .line {
+        width: 30%;
+    }
+
+    .deal {
+        flex-direction: column;
+        min-width: 20rem;
+        height: auto;
+    }
+
+    .deal img {
+        width: 15rem;
+        height: auto;
+    }
+
+    .deal--info {
+        padding: 0px var(--box_inline_padding);
+    }
+
+    .footer__links {
+        flex-direction: column;
+    }
+
+    .heading--name {
+        display: block;
+    }
+}
